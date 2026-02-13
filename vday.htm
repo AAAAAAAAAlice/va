@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Will You Be My Valentine?</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: "Microsoft YaHei", sans-serif;
+            background-color: #ffe6f0;
+            overflow: hidden;
+        }
+
+        h1 {
+            margin-top: 100px;
+            font-size: 40px;
+            color: #ff4d88;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            font-size: 20px;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            position: absolute;
+            transition: 0.2s;
+        }
+
+        #yesBtn {
+            background-color: #ff4d88;
+            color: white;
+            left: 42%;
+            top: 55%;
+        }
+
+        #noBtn {
+            background-color: #999;
+            color: white;
+            left: 55%;
+            top: 55%;
+        }
+
+        .love-text {
+            margin-top: 60px;
+            font-size: 22px;
+            line-height: 40px;
+            padding: 0 30px;
+            color: #ff3366;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>Will you be my Valentine? 💖</h1>
+
+<button id="yesBtn" class="btn" onclick="goToLovePage()">愿意 💘</button>
+<button id="noBtn" class="btn">不要 😢</button>
+
+<script>
+    const noBtn = document.getElementById("noBtn");
+
+    noBtn.addEventListener("mouseover", function() {
+        const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
+        const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
+        noBtn.style.left = x + "px";
+        noBtn.style.top = y + "px";
+    });
+
+    function goToLovePage() {
+        document.body.innerHTML = `
+            <h1 style="margin-top:60px; color:#ff4d88;">情人节快乐 💖</h1>
+            <div class="love-text">
+                • 情人节快乐。<br>
+                • 我没有什么特别大的奢求。<br>
+                • 不用你时刻热情，也不用你甜言蜜语。<br>
+                • 我只希望我们之间，简简单单、安安稳稳。<br>
+                • 不吵架，不冷战，不疏远。<br>
+                • 有话好好说，有事慢慢聊。<br>
+                • 我只想和你，一直一直走下去。<br>
+                • 不急不躁，不吵不闹，长长久久。<br>
+                • 只要身边是你，就足够啦。<br>
+                • 爱你呦，宝宝。 💕
+            </div>
+        `;
+    }
+</script>
+
+</body>
+</html>
